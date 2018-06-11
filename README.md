@@ -10,7 +10,7 @@ Architecture from [Zhixuhao](https://github.com/zhixuhao/unet) and [jocicmarko](
 
 Input image:
 
-![Input](https://github.com/andrewk1/TreeNet/blob/master/raw.png?s=90)
+<img src=https://github.com/andrewk1/TreeNet/blob/master/raw.png width="168" height="168">
 
 Predicted tree mask:
 
