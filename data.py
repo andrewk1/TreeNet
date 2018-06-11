@@ -5,10 +5,10 @@ from skimage.io import imsave, imread
 # import matplotlib.pyplot as plt
 # import tifffile as tiff
 
-data_path = 'raw/'
+data_path = 'scaled_raw/'
 
-image_rows = 480
-image_cols = 480
+image_rows = 168
+image_cols = 168
 
 def create_train_data():
     train_data_path = os.path.join(data_path, 'train')
@@ -84,9 +84,9 @@ def create_test_data():
 
 
 def load_test_data():
-    imgs_test = np.load(path + 'imgs_test.npy')
-    imgs_id = np.load(path + 'imgs_id_test.npy')
-    imgs_mask_test = np.load('')
+    imgs_test = np.load('first_run_results/results/orig/imgs_test.npy')
+    imgs_id = np.load('first_run_results/results/orig/imgs_id_test.npy')
+    # imgs_mask_test = np.load('')
     return imgs_test, imgs_id
 
 if __name__ == '__main__':

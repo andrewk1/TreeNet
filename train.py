@@ -13,8 +13,8 @@ from data import load_train_data, load_test_data
 from sklearn.metrics import f1_score, recall_score, precision_score
 K.set_image_data_format('channels_last')  # TF dimension ordering in this code
 
-img_rows = 480
-img_cols = 480
+img_rows = 160
+img_cols = 160
 
 smooth = 1.
 
@@ -33,7 +33,7 @@ def dice_coef_loss(y_true, y_pred):
 
 # Given the returned .npy test ask and truth mask, returns dice coeff
 def dice_loss_test():
-	path = 'first_run_results/results/orig/'
+	path = 'last_run/results/orig/'
 	imgs_test = np.load(path + 'imgs_test.npy')
 	imgs_id = np.load(path + 'imgs_id_test.npy')
 	imgs_mask_truth = np.load(path + 'imgs_mask_test.npy')
@@ -179,7 +179,7 @@ def train_and_predict(load=False):
 	print('-' * 30)
 	print('Saving predicted masks to files...')
 	print('-' * 30)
-	pred_dir = 'preds'
+	pred_dir = 'final_preds'
 	if not os.path.exists(pred_dir):
 		os.mkdir(pred_dir)
 	for image, image_id in zip(imgs_mask_test, imgs_id_test):
@@ -188,5 +188,5 @@ def train_and_predict(load=False):
 		imsave(os.path.join(pred_dir, str(image_id) + '_pred.png'), image)
 
 if __name__ == '__main__':
-	train_and_predict(load=False)
-	dice_loss_test()
+	train_and_predict(load=True)
+	# dice_loss_test()
