@@ -9,7 +9,8 @@ Architecture from [Zhixuhao](https://github.com/zhixuhao/unet) and [jocicmarko](
 [Dataset](https://www.kaggle.com/c/dstl-satellite-imagery-feature-detection)
 
 Input image:
-![Input](https://github.com/andrewk1/TreeNet/blob/master/raw.png "Input")
+
+![Input](https://github.com/andrewk1/TreeNet/blob/master/raw.png =168x168)
 
 Predicted tree mask:
 
